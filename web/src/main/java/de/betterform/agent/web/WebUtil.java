@@ -276,7 +276,7 @@ public class WebUtil {
         String plainPath ="";
         try {
             url = new URL(requestURL);
-            requestPath = url.getPath(); //REQUEST_PATH   /alfresco/service/acm/xforms
+            requestPath = url.getPath(); 
         } catch (MalformedURLException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
