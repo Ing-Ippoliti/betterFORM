@@ -288,12 +288,12 @@ public class WebUtil {
             String fileName = requestPath.substring(requestPath.lastIndexOf('/')+1,requestPath.length());//FILENAME xforms
             processor.setContextParam(FILENAME, fileName);
 
-            if(requestURL.contains(contextRoot)){
+            if(requestURL.contains(contextRoot)){ //contextRoot is a part of the URL 
 	            //adding plainPath which is the part between contextroot and filename e.g. '/forms' for a requestPath of '/betterform/forms/Status.xhtml'
 	            plainPath = requestPath.substring(contextRoot.length()+1,requestPath.length() - fileName.length());
 	            processor.setContextParam(PLAIN_PATH, plainPath);
             }
-            else{
+            else{ //contextRoot is not a part of the URL --> retrieve the last part of the url before the filename
             	String[] urlParts=requestURL.split("/");
             	plainPath=urlParts[urlParts.length-2];
             }
